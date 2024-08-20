@@ -1,4 +1,4 @@
-import random
+import random as r
 import turtle
 
 
@@ -96,20 +96,34 @@ def do_a_star():
 # dashed_line()
 # turtle.left(90)
 
-def pentagonal(num_sides):
-    angle = 360 / num_sides
-    print(angle)
-    turtle.getscreen().bgcolor("black")
-    for _ in range(num_sides):
-        turtle.forward(70)
-        turtle.right(angle)
-    for _ in range(num_sides):
-        turtle.forward(70)
-        turtle.left(angle)
+# def drawn_pentagonal(num_sides):
+#     angle = 360 / num_sides
+#     turtle.getscreen().bgcolor("black")
+#     for _ in range(num_sides):
+#         turtle.forward(70)
+#         turtle.right(angle)
+#     for _ in range(num_sides):
+#         turtle.forward(70)
+#         turtle.left(angle)
+#
+# for shape_side_n in range(3, 11):
+#     turtle.color(random.choice(["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]))
+#     drawn_pentagonal(shape_side_n)
 
-for shape_side_n in range(3, 11):
-    turtle.color(random.choice(["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]))
-    pentagonal(shape_side_n)
+def random_walk(num_steps):
+    turtle.getscreen().bgcolor("black")
+    turtle.pensize(5)
+    random_value = r.random()
+    for _ in range(num_steps):
+        turtle.color(r.choice(["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]))
+        if random_value < 0.5:
+            turtle.left(90)
+        else:
+            turtle.right(90)
+        turtle.forward(r.randint(1, 100))
+
+
+random_walk(100)
 
 screen = turtle.Screen()
 screen.exitonclick()
