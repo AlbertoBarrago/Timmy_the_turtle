@@ -114,14 +114,15 @@ def random_walk(num_steps, bg_color):
     directions = [0, 90, 180, 270]
     colors = ["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]
     turtle.getscreen().bgcolor(bg_color)
-    turtle.pensize(5)
+    turtle.pensize(7)
+    turtle.speed("fastest")
     for _ in range(num_steps):
         turtle.color(r.choice(colors))
         turtle.forward(30)
         turtle.setheading(r.choice(directions))
 
 
-random_walk(100, "black")
+random_walk(200, "black")
 
 screen = turtle.Screen()
 screen.exitonclick()
