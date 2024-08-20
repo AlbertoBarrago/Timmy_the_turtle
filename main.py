@@ -116,19 +116,29 @@ def random_color():
     rgb_b = r.random()
     rgb_color = (rgb_r, rgb_g, rgb_b)
     return rgb_color
+#
+# def random_walk(num_steps, bg_color):
+#     directions = [0, 90, 180, 270]
+#     turtle.getscreen().bgcolor(bg_color)
+#     turtle.pensize(7)
+#     turtle.speed("fastest")
+#     for _ in range(num_steps):
+#         turtle.color(random_color())
+#         turtle.forward(30)
+#         turtle.setheading(r.choice(directions))
+#
+#
+# random_walk(200, "black")
 
-def random_walk(num_steps, bg_color):
-    directions = [0, 90, 180, 270]
-    turtle.getscreen().bgcolor(bg_color)
-    turtle.pensize(7)
+def draw_spirograph(size_of_gap):
     turtle.speed("fastest")
-    for _ in range(num_steps):
+    turtle.shape("turtle")
+    for _ in range(int(360 / size_of_gap)):
         turtle.color(random_color())
-        turtle.forward(30)
-        turtle.setheading(r.choice(directions))
+        turtle.circle(100)
+        turtle.setheading(turtle.heading() + size_of_gap)
 
-
-random_walk(200, "black")
+draw_spirograph(3)
 
 screen = turtle.Screen()
 screen.exitonclick()
