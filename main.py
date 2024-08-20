@@ -110,17 +110,18 @@ def do_a_star():
 #     turtle.color(random.choice(["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]))
 #     drawn_pentagonal(shape_side_n)
 
-def random_walk(num_steps):
+def random_walk(num_steps, bg_color):
     directions = [0, 90, 180, 270]
-    turtle.getscreen().bgcolor("black")
+    colors = ["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]
+    turtle.getscreen().bgcolor(bg_color)
     turtle.pensize(5)
     for _ in range(num_steps):
-        turtle.color(r.choice(["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]))
+        turtle.color(r.choice(colors))
         turtle.forward(30)
         turtle.setheading(r.choice(directions))
 
 
-random_walk(100)
+random_walk(100, "black")
 
 screen = turtle.Screen()
 screen.exitonclick()
