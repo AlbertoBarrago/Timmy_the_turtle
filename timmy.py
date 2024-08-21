@@ -6,6 +6,7 @@ It includes methods for drawing shapes, random walks, and spirographs.
 import random as r
 from turtle import Turtle
 
+
 class Timmy:
     """
     This class is used to draw shapes and lines.
@@ -19,7 +20,10 @@ class Timmy:
         self.shape = shape
         self.speed = speed
         self.color = color
-        self.color_list = ["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]
+        self.color_list = [
+            "medium aquamarine", "dark violet", "dark orange",
+            "dark red", "dark green"
+        ]
 
     def init_turtle(self, is_fast=False):
         """

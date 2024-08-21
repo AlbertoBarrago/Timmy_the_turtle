@@ -9,5 +9,5 @@ timmy = Timmy("turtle", 1, "black")
 #Draw shapes
 timmy.random_walk(190, "black")
 #Init screen
-Screen = turtle.Screen()
-Screen.exitonclick()
+SCREEN = turtle.Screen()
+SCREEN.exitonclick()
