@@ -9,6 +9,7 @@ class Timmy:
     :param speed: speed of the turtle
     :param color: color of the turtle
     """
+
     def __init__(self, shape, speed, color):
         self.shape = shape if shape else "classic"
         self.speed = speed if speed else 1
@@ -110,7 +111,6 @@ class Timmy:
         for _ in range(num_sides):
             turtle.forward(70)
             turtle.right(angle)
-
 
     @staticmethod
     def random_color():
