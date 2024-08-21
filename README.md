@@ -14,3 +14,6 @@ timmy = Timmy("turtle", 1, "black")
 #Draw shapes
 timmy.do_a_draw_spirograph(10)
 ```
+
+## Gift me a ⭐️ 
+if you like it ^^ 
