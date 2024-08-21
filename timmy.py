@@ -5,107 +5,74 @@ import turtle
 class Timmy:
     """
     This class is used to draw shapes and lines.
-    :param shape: shape of the turtle
-    :param speed: speed of the turtle
-    :param color: color of the turtle
+
+    :param shape: Shape of the turtle
+    :param speed: Speed of the turtle
+    :param color: Color of the turtle
     """
 
-    def __init__(self, shape, speed, color):
-        self.shape = shape if shape else "classic"
-        self.speed = speed if speed else 1
-        self.color = color if color else "black"
+    def __init__(self, shape="classic", speed=1, color="black"):
+        self.shape = shape
+        self.speed = speed
+        self.color = color
         self.color_list = ["medium aquamarine", "dark violet", "dark orange", "dark red", "dark green"]
 
-    def init_tutle(self, is_fast=None):
+    def init_turtle(self, is_fast=False):
         """
-        This method is used to initialize the turtle.
-        :param is_fast:
-        :return:
+        Initialize the turtle with given attributes.
+
+        :param is_fast: If True, set turtle speed to fastest.
         """
         turtle.shape(self.shape)
         turtle.color(self.color)
-        turtle.speed("fastest" if is_fast else 1)
+        turtle.speed("fastest" if is_fast else self.speed)
 
-    def do_a_square(self):
-        """
-        This method is used to draw a square.
-        :return:
-        """
-        self.init_tutle()
-        turtle.forward(100)
-        turtle.left(90)
-        turtle.forward(100)
-        turtle.left(90)
-        turtle.forward(100)
-        turtle.left(90)
-        turtle.forward(100)
+    def draw_square(self):
+        """Draw a square."""
+        self.init_turtle()
+        for _ in range(4):
+            turtle.forward(100)
+            turtle.left(90)
 
-    def do_a_circle(self):
-        """
-        This method is used to draw a circle.
-        :return:
-        """
-        self.init_tutle()
+    def draw_circle(self):
+        """Draw a circle."""
+        self.init_turtle()
         turtle.circle(100)
 
-    def do_a_triangle(self):
-        """
-        This method is used to draw a triangle.
-        :return:
-        """
-        self.init_tutle()
-        turtle.forward(100)
-        turtle.left(120)
-        turtle.forward(100)
-        turtle.left(120)
-        turtle.forward(100)
+    def draw_triangle(self):
+        """Draw a triangle."""
+        self.init_turtle()
+        for _ in range(3):
+            turtle.forward(100)
+            turtle.left(120)
 
-    def do_a_star(self):
-        """
-        This method is used to draw a star.
-        :return:
-        """
-        self.init_tutle()
-        turtle.forward(100)
-        turtle.left(144)
-        turtle.forward(100)
-        turtle.left(144)
-        turtle.forward(100)
-        turtle.left(144)
-        turtle.forward(100)
-        turtle.left(144)
-        turtle.forward(100)
-        turtle.left(144)
-        turtle.forward(100)
+    def draw_star(self):
+        """Draw a star."""
+        self.init_turtle()
+        for _ in range(5):
+            turtle.forward(100)
+            turtle.left(144)
 
-    def do_a_dashed_line(self, range_value):
+    def draw_dashed_line(self, length):
         """
-        This method is used to draw a dashed line.
-        :param range_value:
-        :return:
+        Draw a dashed line.
+
+        :param length: Number of dashes to draw.
         """
-        self.init_tutle()
-        for _ in range(range_value):
-            turtle.penup()
-            turtle.forward(10)
-            turtle.pendown()
+        self.init_turtle()
+        for _ in range(length):
             turtle.forward(10)
             turtle.penup()
             turtle.forward(10)
             turtle.pendown()
-            turtle.forward(10)
-            turtle.penup()
-            turtle.forward(10)
-            turtle.pendown()
-            turtle.forward(10)
 
-    def do_a_drawn_pentagonal(self, num_sides):
+    def draw_pentagon(self, num_sides):
         """
-        This method is used to draw a pentagonal.
-        :param num_sides:
-        :return:
+        Draw a polygon with the specified number of sides.
+
+        :param num_sides: Number of sides for the polygon.
         """
-        self.init_tutle()
+        self.init_turtle()
         angle = 360 / num_sides
         turtle.getscreen().bgcolor("black")
         for _ in range(num_sides):
@@ -114,20 +81,21 @@ class Timmy:
 
     @staticmethod
     def random_color():
-        rgb_r = r.random()
-        rgb_g = r.random()
-        rgb_b = r.random()
-        rgb_color = (rgb_r, rgb_g, rgb_b)
-        return rgb_color
+        """
+        Generate a random color in RGB format.
 
-    def do_a_random_walk(self, num_steps, bg_color):
+        :return: A tuple representing the RGB color.
         """
-        This method is used to draw a random walk.
-        :param num_steps:
-        :param bg_color:
-        :return:
+        return r.random(), r.random(), r.random()
+
+    def random_walk(self, num_steps, bg_color):
         """
-        self.init_tutle(True)
+        Perform a random walk.
+
+        :param num_steps: Number of steps for the random walk.
+        :param bg_color: Background color of the turtle screen.
+        """
+        self.init_turtle(True)
         directions = [0, 90, 180, 270]
         turtle.getscreen().bgcolor(bg_color)
         for _ in range(num_steps):
@@ -135,14 +103,14 @@ class Timmy:
             turtle.forward(30)
             turtle.setheading(r.choice(directions))
 
-    def do_a_draw_spirograph(self, size_of_gap):
+    def draw_spirograph(self, gap_size):
         """
-        This method is used to draw a spirograph.
-        :param size_of_gap:
-        :return:
+        Draw a spirograph with a specific gap size between each rotation.
+
+        :param gap_size: Gap size between rotations.
         """
-        self.init_tutle(True)
-        for _ in range(int(360 / size_of_gap)):
+        self.init_turtle(True)
+        for _ in range(int(360 / gap_size)):
             turtle.color(self.random_color())
             turtle.circle(100)
-            turtle.setheading(turtle.heading() + size_of_gap)
+            turtle.setheading(turtle.heading() + gap_size)
