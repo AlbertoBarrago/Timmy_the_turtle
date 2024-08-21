@@ -1,3 +1,6 @@
+"""
+This module is the main entry
+"""
 import turtle
 from timmy import Timmy
 
@@ -6,5 +9,5 @@ timmy = Timmy("turtle", 1, "black")
 #Draw shapes
 timmy.random_walk(190, "black")
 #Init screen
-screen = turtle.Screen()
-screen.exitonclick()
+Screen = turtle.Screen()
+Screen.exitonclick()
