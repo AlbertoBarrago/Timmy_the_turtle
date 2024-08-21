@@ -1,11 +1,14 @@
 """
-This module contains the Timmy class, which provides various drawing functionalities using the turtle module.
-It includes methods for drawing shapes, random walks, and spirographs.
+This module contains the Timmy class, which provides
+various drawing functionalities using the turtle module.
+It includes methods for drawing shapes, random walks,
+and spectrographs.
 """
 
 import random as r
-from turtle import Turtle
-
+from turtle import (
+    Turtle
+)
 
 class Timmy:
     """
