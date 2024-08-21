@@ -7,6 +7,12 @@
 The class `timmy.py` offers different shapes and draw methods. 
 
 _Example of use:_
+Before install requirements
+
+```bash
+pip install -r requirements.txt
+```
+Then Import module Timmy
 ```pycon
 from timmy import Timmy
 
