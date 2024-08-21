@@ -1,4 +1,5 @@
 # Timmy the turtle 
+[![Code style: black](https://github.com/albertobarrago/tutle_timmy/actions/workflows/pylint.yml/badge.svg)](https://github.com/albertobarrago/tutle_timmy/actions/workflows/pylint.yml)
 
 - Turtle module Python [Documentation](https://docs.python.org/3/library/turtle.html)
 
@@ -14,6 +15,7 @@ timmy = Timmy("turtle", 1, "black")
 #Draw shapes
 timmy.do_a_draw_spirograph(10)
 ```
+
 
 ## Gift me a ⭐️ 
 if you like it ^^ 
