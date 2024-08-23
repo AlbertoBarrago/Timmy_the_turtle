@@ -4,11 +4,11 @@ various drawing functionalities using the turtle module.
 It includes methods for drawing shapes, random walks,
 and spectrographs.
 """
-
 import random as r
 from turtle import (
     Turtle
 )
+from extract_color import color_list_rgb
 
 
 class Timmy:
@@ -128,3 +128,29 @@ class Timmy:
             t.color(self.random_color())
             t.circle(100)
             t.setheading(t.heading() + gap_size)
+
+    def draw_hirst_painting(self, num_dots, dot_size, dot_spacing):
+        """
+        Draw a Hirst painting with a specified number of dots.
+        :param num_dots: Number of dots to draw.
+        :param dot_size: Size of each dot.
+        :param dot_spacing: Spacing between dots.
+        """
+        t = self.init_turtle(True)
+        t.hideturtle()
+        t.penup()
+        t.setheading(225)
+        t.forward(300)
+        t.setheading(0)
+        t.getscreen().bgcolor("black")
+
+        for dot_count in range(1, num_dots + 1):
+            t.dot(dot_size, r.choice(color_list_rgb))
+            t.forward(dot_spacing)
+
+            if dot_count % 10 == 0:
+                t.setheading(90)
+                t.forward(50)
+                t.setheading(180)
+                t.forward(500)
+                t.setheading(0)
