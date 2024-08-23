@@ -10,6 +10,7 @@ from turtle import (
     Turtle
 )
 
+
 class Timmy:
     """
     This class is used to draw shapes and lines.
