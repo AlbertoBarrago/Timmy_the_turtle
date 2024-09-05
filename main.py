@@ -6,7 +6,7 @@ import turtle
 import timmy
 
 
-def spyral_demo():
+def hirst_paint():
     """
     :return: None
     """
@@ -17,7 +17,7 @@ def spyral_demo():
 
 
 if __name__ == "__main__":
-    spyral_demo()
+    hirst_paint()
 # Init screen
 SCREEN = turtle.Screen()
 SCREEN.exitonclick()
